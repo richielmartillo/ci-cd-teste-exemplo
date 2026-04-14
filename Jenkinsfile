@@ -15,14 +15,14 @@ pipeline {
                 bat 'npm test'
             }
         }
+    }
 
-        post {
-            success
-                echo 'Build e testes executados com sucesso'     
+    post {
+        success {
+            echo 'Build e testes executados com sucesso'
         }
-            failure {
-                echo 'Falha na execução do pipeline'
+        failure {
+            echo 'Falha na execução do pipeline'
         }
-
-    }  
+    }
 }
